@@ -1,12 +1,14 @@
 package example.market_jpa.dto.company;
 
-import lombok.Builder;
-import lombok.Data;
+import lombok.*;
 
-@Data
+@Getter
+@Setter
 @Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class CompanyDTO {
-    private String name;
+    private String companyName;
     private String address;
     private String tell;
     private String description;

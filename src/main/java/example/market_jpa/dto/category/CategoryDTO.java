@@ -1,14 +1,12 @@
 package example.market_jpa.dto.category;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
-@Data
+@Getter
+@Setter
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
 public class CategoryDTO {
-    private String name;
+    private String categoryName;
 }

@@ -3,9 +3,9 @@ package example.market_jpa.service;
 import java.util.List;
 
 public interface Service <A,B>{
-    A getById(Integer id);
+    A getById(Long id);
     List<A> getAll();
     A create(B b);
-    A update(Integer id,B b);
-    void delete(Integer id);
+    A update(Long id,B b);
+    void delete(Long id);
 }
