@@ -2,8 +2,10 @@ package example.market_jpa.Controller;
 
 import example.market_jpa.dto.company.CompanyDTO;
 import example.market_jpa.dto.company.CompanyResDTO;
+import example.market_jpa.dto.company.CompanyResDTO;
 import example.market_jpa.service.CompanyService;
 import lombok.Data;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -12,7 +14,8 @@ import java.util.List;
 @RestController
 @RequestMapping("company")
 public class CompanyController {
-    private final CompanyService service;
+    @Autowired
+    private CompanyService service;
     @GetMapping
     public List<CompanyResDTO> getAll(){
         return service.getAll();

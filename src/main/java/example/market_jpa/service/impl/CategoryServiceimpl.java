@@ -3,7 +3,7 @@ package example.market_jpa.service.impl;
 import example.market_jpa.dto.category.CategoryDTO;
 import example.market_jpa.dto.category.CategoryResDTO;
 import example.market_jpa.entity.Category;
-import example.market_jpa.mapper.impl.CategoryMapper;
+import example.market_jpa.mappers.impl.CategoryMapper;
 import example.market_jpa.repository.CategoryRepository;
 import example.market_jpa.service.CategoryService;
 import lombok.*;
@@ -12,12 +12,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-//@AllArgsConstructor
-//@NoArgsConstructor
-@Getter
-@Setter
-@RequiredArgsConstructor
-@Builder
+@Data
 public class CategoryServiceimpl implements CategoryService {
     private final CategoryRepository repository;
     private final CategoryMapper mapper;

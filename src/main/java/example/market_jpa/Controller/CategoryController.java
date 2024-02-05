@@ -2,8 +2,11 @@ package example.market_jpa.Controller;
 
 import example.market_jpa.dto.category.CategoryDTO;
 import example.market_jpa.dto.category.CategoryResDTO;
+import example.market_jpa.dto.category.CategoryResDTO;
 import example.market_jpa.service.CategoryService;
 import lombok.Data;
+import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -12,7 +15,8 @@ import java.util.List;
 @RequestMapping("/category")
 @Data
 public class CategoryController {
-    private final CategoryService service;
+    @Autowired
+    private CategoryService service;
     @GetMapping
     public List<CategoryResDTO> getAll(){
         return service.getAll();

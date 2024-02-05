@@ -7,8 +7,7 @@ import jakarta.persistence.Id;
 import lombok.*;
 
 @Entity
-@Getter
-@Setter
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class Company {
@@ -18,5 +17,4 @@ public class Company {
     private String companyName;
     private String address;
     private String tell;
-    private String description;
 }

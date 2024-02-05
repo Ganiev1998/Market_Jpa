@@ -2,8 +2,7 @@ package example.market_jpa.dto.company;
 
 import lombok.*;
 
-@Getter
-@Setter
+@Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
@@ -11,5 +10,4 @@ public class CompanyDTO {
     private String companyName;
     private String address;
     private String tell;
-    private String description;
 }

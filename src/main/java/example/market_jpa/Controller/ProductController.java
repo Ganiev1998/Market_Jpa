@@ -2,9 +2,11 @@ package example.market_jpa.Controller;
 
 import example.market_jpa.dto.product.ProductDTO;
 import example.market_jpa.dto.product.ProductResDTO;
+import example.market_jpa.dto.product.ProductResDTO;
 import example.market_jpa.service.ProductService;
 import lombok.Data;
 import org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -13,7 +15,8 @@ import java.util.List;
 @RestController
 @RequestMapping("/product")
 public class ProductController {
-    private final ProductService service;
+    @Autowired
+    private ProductService service;
     @GetMapping
     public List<ProductResDTO> getAll(){
         return service.getAll();

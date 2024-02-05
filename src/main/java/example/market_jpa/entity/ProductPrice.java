@@ -1,20 +1,23 @@
 package example.market_jpa.entity;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.util.Date;
 
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Product {
+public class ProductPrice {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String productName;
     @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
-    private Category category;
-    @ManyToOne(cascade = CascadeType.ALL)
-    private Measurement measure;
-    private Long amount;
+    private Product product;
+    private Double price;
+    private Date date;
+    private Boolean status;
 }

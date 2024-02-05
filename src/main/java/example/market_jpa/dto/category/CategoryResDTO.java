@@ -2,9 +2,9 @@ package example.market_jpa.dto.category;
 
 import lombok.*;
 
-@Setter
-@Getter
 @Builder
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class CategoryResDTO {
