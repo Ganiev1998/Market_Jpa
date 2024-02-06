@@ -1,10 +1,9 @@
 package example.market_jpa.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.List;
 
 @Entity
 @Data
@@ -17,4 +16,6 @@ public class Company {
     private String companyName;
     private String address;
     private String tell;
+    @OneToMany(mappedBy = "company")
+    private List<AcceptDocument> documents;
 }

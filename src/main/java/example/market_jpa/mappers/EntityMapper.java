@@ -6,4 +6,5 @@ public interface EntityMapper <D,E,R>{
     R toDTO(E e);
     List<R> toDTOs(List<E> es);
     E toENT(D d);
+    D toDTO2(E e);
 }

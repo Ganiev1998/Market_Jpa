@@ -1,12 +1,14 @@
 package example.market_jpa.dto.acceptDocument;
 
 import example.market_jpa.dto.company.CompanyResDTO;
+import example.market_jpa.entity.AcceptDocumentItem;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
+import java.util.List;
 
 @Data
 @Builder
@@ -17,4 +19,5 @@ public class AcceptDocumentResDTO {
     private Long docNumber;
     private CompanyResDTO company;
     private Date date;
+    //private List<AcceptDocumentItem> documentItems;
 }

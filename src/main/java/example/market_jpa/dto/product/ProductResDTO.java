@@ -2,7 +2,10 @@ package example.market_jpa.dto.product;
 
 import example.market_jpa.dto.Measure.MeasureResDTO;
 import example.market_jpa.dto.category.CategoryResDTO;
+import example.market_jpa.entity.AcceptDocumentItem;
 import lombok.*;
+
+import java.util.List;
 
 @Builder
 @Data
@@ -14,4 +17,5 @@ public class ProductResDTO {
     private CategoryResDTO category;
     private MeasureResDTO measure;
     private Long amount;
+    //private List<AcceptDocumentItem> documentItems;
 }

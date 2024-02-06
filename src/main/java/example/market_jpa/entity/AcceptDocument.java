@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Data
@@ -20,4 +21,6 @@ public class AcceptDocument {
     @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
     private Company company;
     private Date date;
+    @OneToMany(mappedBy = "acceptDocument")
+    private List<AcceptDocumentItem> documentItems;
 }

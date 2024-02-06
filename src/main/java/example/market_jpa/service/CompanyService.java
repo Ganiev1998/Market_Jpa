@@ -16,6 +16,7 @@ public interface CompanyService extends Service<CompanyResDTO, CompanyDTO> {
     @Override
     CompanyResDTO create(CompanyDTO companyDTO);
 
+
     @Override
     CompanyResDTO update(Long id, CompanyDTO companyDTO);
 

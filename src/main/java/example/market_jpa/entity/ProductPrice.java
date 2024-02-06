@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CreationTimestamp;
 
 import java.util.Date;
 
@@ -18,6 +19,15 @@ public class ProductPrice {
     @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
     private Product product;
     private Double price;
+    @CreationTimestamp
+    @Temporal(TemporalType.DATE)
     private Date date;
+    @Column(nullable = false)
     private Boolean status;
+    @PrePersist
+    public void prepersist(){
+        if(status == null){
+            status = true;
+        }
+    }
 }

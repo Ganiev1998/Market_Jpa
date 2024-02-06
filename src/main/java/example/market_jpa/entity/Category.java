@@ -3,6 +3,8 @@ package example.market_jpa.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
@@ -14,4 +16,6 @@ public class Category {
     private Long id;
     @Column(unique = true)
     private String categoryName;
+    @OneToMany(mappedBy = "category")
+    private List<Product> products;
 }
