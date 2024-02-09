@@ -5,9 +5,13 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.sql.Date;
+
 @Setter
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
 public class SaleDocumentDTO {
+    private String docNumber;
+    private Date date;
 }

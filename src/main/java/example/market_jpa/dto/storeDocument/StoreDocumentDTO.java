@@ -12,4 +12,6 @@ import java.sql.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 public class StoreDocumentDTO {
+    private String docNumber;
+    private Date date;
 }

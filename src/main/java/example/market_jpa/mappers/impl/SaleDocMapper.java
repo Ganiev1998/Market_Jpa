@@ -7,5 +7,5 @@ import example.market_jpa.mappers.EntityMapper;
 import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")
-public interface SaleDocumentMapper extends EntityMapper<SaleDocumentDTO, SaleDocument, SaleDocumentResDTO> {
+public interface SaleDocMapper extends EntityMapper<SaleDocumentDTO, SaleDocument, SaleDocumentResDTO> {
 }

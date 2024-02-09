@@ -14,11 +14,11 @@ import java.util.Set;
 @NoArgsConstructor
 public class SaleDocument {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @GeneratedValue(strategy = GenerationType.UUID)
     @Column(unique = true)
-    private Long docNumber;
+    private String docNumber;
     @CreationTimestamp
     @Temporal(TemporalType.DATE)
     private Date date;
