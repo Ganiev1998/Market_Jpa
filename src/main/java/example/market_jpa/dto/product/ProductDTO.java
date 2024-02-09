@@ -8,6 +8,7 @@ import example.market_jpa.entity.Measurement;
 import lombok.*;
 
 import java.util.List;
+import java.util.Set;
 
 @Data
 @Builder
@@ -18,5 +19,5 @@ public class ProductDTO {
     private CategoryDTO category;
     private MeasureDTO measure;
     private Long amount;
-
+    //private Set<AcceptDocumentItem> documentItems;
 }

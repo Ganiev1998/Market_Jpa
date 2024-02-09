@@ -4,29 +4,20 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 
-import java.util.Date;
+import java.sql.Date;
 
 @Entity
 @Setter
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class ProductPrice {
+public class StoreDocument {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
-    private Product product;
-    private Double price;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private String docNumber;
     @CreationTimestamp
     @Temporal(TemporalType.DATE)
     private Date date;
-    @Column(nullable = false)
-    private Boolean status;
-    @PrePersist
-    public void prepersist(){
-        if(status == null){
-            status = true;
-        }
-    }
 }

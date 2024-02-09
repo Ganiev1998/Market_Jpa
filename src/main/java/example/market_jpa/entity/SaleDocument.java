@@ -5,25 +5,23 @@ import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.util.Date;
-import java.util.List;
+import java.util.Set;
 
 @Entity
 @Setter
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class AcceptDocument {
+public class SaleDocument {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     private Long id;
-    @Column(unique = true)
     @GeneratedValue(strategy = GenerationType.UUID)
-    private String docNumber;
-    @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
-    private Company company;
+    @Column(unique = true)
+    private Long docNumber;
     @CreationTimestamp
     @Temporal(TemporalType.DATE)
     private Date date;
-    @OneToMany(mappedBy = "acceptDocument")
-    private List<AcceptDocumentItem> documentItems;
+//    @OneToMany(mappedBy = "saleDocument")
+//    private Set<SaleDocumentItem> documentItems;
 }

@@ -16,7 +16,7 @@ import java.util.List;
 @NoArgsConstructor
 public class AcceptDocumentResDTO {
     private Long id;
-    private Long docNumber;
+    private String docNumber;
     private CompanyResDTO company;
     private Date date;
     //private List<AcceptDocumentItem> documentItems;

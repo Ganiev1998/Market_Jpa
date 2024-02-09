@@ -19,6 +19,7 @@ public class ProductController {
     private ProductService service;
     @GetMapping
     public List<ProductResDTO> getAll(){
+        System.out.println(service.getAll());
         return service.getAll();
     }
     @GetMapping("/{id}")

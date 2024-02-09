@@ -1,22 +1,23 @@
 package example.market_jpa.entity;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @Setter
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class AcceptDocumentItem {
+public class StoreDocItem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @ManyToOne(cascade = CascadeType.ALL,fetch =FetchType.EAGER)
-    private AcceptDocument acceptDocument;
     @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
-    private Product product;
-    private Double comePrice;
+    private StoreDocument storeDocument;
+    @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+    private StoreProduct storeProduct;
     private Long count;
-
 }

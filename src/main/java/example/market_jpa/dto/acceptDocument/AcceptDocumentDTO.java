@@ -13,7 +13,5 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 public class AcceptDocumentDTO {
-    private Long docNumber;
     private CompanyDTO company;
-    private Date date;
 }
