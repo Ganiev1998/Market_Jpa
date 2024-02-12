@@ -12,7 +12,7 @@ import java.util.List;
 
 @RestController
 @Data
-@RequestMapping("/price")
+@RequestMapping("/productPrice")
 public class ProductPriceController {
     private final ProductPriceService service;
     @GetMapping

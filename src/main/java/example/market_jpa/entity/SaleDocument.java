@@ -22,6 +22,6 @@ public class SaleDocument {
     @CreationTimestamp
     @Temporal(TemporalType.DATE)
     private Date date;
-//    @OneToMany(mappedBy = "saleDocument")
-//    private Set<SaleDocumentItem> documentItems;
+    @OneToMany(mappedBy = "saleDocument")
+    private Set<SaleDocumentItem> documentItems;
 }

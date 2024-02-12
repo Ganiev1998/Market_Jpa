@@ -1,18 +1,21 @@
 package example.market_jpa.entity;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 
-import java.sql.Date;
-import java.util.Set;
+import java.util.Date;
+import java.util.List;
 
 @Entity
 @Setter
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class StoreDocument {
+public class ReturnToStoreDoc {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -21,6 +24,6 @@ public class StoreDocument {
     @CreationTimestamp
     @Temporal(TemporalType.DATE)
     private Date date;
-    @OneToMany(mappedBy = "storeDocument")
-    private Set<StoreDocumentItem> documentItems;
+    @OneToMany(mappedBy = "doc",fetch = FetchType.EAGER)
+    private List<ReturnToStoreDocItem> docItems;
 }

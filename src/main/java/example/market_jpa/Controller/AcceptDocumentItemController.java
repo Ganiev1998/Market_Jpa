@@ -10,7 +10,7 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("docItem")
+@RequestMapping("acceptDocumentItem")
 public class AcceptDocumentItemController {
     private final AcceptDocumentItemService service;
     @GetMapping

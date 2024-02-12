@@ -10,7 +10,7 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/doc")
+@RequestMapping("/acceptDocument")
 public class AcceptDocumentController {
     private final AcceptDocumentService service;
     @GetMapping("/{id}")
