@@ -13,6 +13,7 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 public class AcceptDocumentDTO {
+    private Long id;
     private String docNumber;
     private CompanyDTO company;
     private Date date;

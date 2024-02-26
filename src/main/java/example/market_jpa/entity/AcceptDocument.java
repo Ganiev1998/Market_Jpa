@@ -24,6 +24,8 @@ public class AcceptDocument {
     @CreationTimestamp
     @Temporal(TemporalType.DATE)
     private Date date;
+    @Enumerated(EnumType.STRING)
+    private DocStatus status;
     @OneToMany(mappedBy = "acceptDocument")
     private List<AcceptDocumentItem> documentItems;
 }

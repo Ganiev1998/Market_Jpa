@@ -29,19 +29,19 @@ public class StoreProductController implements Controller<StoreProductResDTO, St
 
     @Override
     @PostMapping
-    public StoreProductResDTO create(StoreProductDTO storeProductDTO) {
+    public StoreProductResDTO create(@RequestBody StoreProductDTO storeProductDTO) {
         return service.create(storeProductDTO);
     }
 
     @Override
     @PutMapping("/{id}")
-    public StoreProductResDTO update(Long id, StoreProductDTO storeProductDTO) {
+    public StoreProductResDTO update(@PathVariable Long id,@RequestBody StoreProductDTO storeProductDTO) {
         return service.update(id,storeProductDTO);
     }
 
     @Override
     @DeleteMapping("/{id}")
-    public void delete(Long id) {
+    public void delete(@PathVariable Long id) {
         service.delete(id);
         System.out.println("object is deleted");
     }

@@ -27,18 +27,18 @@ public class ReturnToWarehouseDocController implements Controller<ReturnToWareho
 
     @Override
     @PostMapping
-    public ReturnToWarehouseDocResDTO create(ReturnToWarehouseDocDTO returnToWarehouseDocDTO) {
+    public ReturnToWarehouseDocResDTO create(@RequestBody ReturnToWarehouseDocDTO returnToWarehouseDocDTO) {
         return service.create(returnToWarehouseDocDTO);
     }
     @Override
     @PutMapping("/{id}")
-    public ReturnToWarehouseDocResDTO update(Long id, ReturnToWarehouseDocDTO returnToWarehouseDocDTO) {
+    public ReturnToWarehouseDocResDTO update(@PathVariable Long id,@RequestBody ReturnToWarehouseDocDTO returnToWarehouseDocDTO) {
         return service.update(id,returnToWarehouseDocDTO);
     }
 
     @Override
     @DeleteMapping("/{id}")
-    public void delete(Long id) {
+    public void delete(@PathVariable Long id) {
         service.delete(id);
         System.out.println("object is deleted");
     }

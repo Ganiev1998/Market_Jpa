@@ -27,19 +27,19 @@ public class ReturnToStoreDocItemController implements Controller<ReturnToStoreD
 
     @Override
     @PostMapping
-    public ReturnToStoreDocItemResDTO create(ReturnToStoreDocItemDTO returnToStoreDocItemDTO) {
+    public ReturnToStoreDocItemResDTO create(@RequestBody ReturnToStoreDocItemDTO returnToStoreDocItemDTO) {
         return service.create(returnToStoreDocItemDTO);
     }
 
     @Override
     @PutMapping("/{id}")
-    public ReturnToStoreDocItemResDTO update(Long id, ReturnToStoreDocItemDTO returnToStoreDocItemDTO) {
+    public ReturnToStoreDocItemResDTO update(@PathVariable Long id,@RequestBody ReturnToStoreDocItemDTO returnToStoreDocItemDTO) {
         return service.update(id,returnToStoreDocItemDTO);
     }
 
     @Override
     @DeleteMapping("/{id}")
-    public void delete(Long id) {
+    public void delete(@PathVariable Long id) {
         service.delete(id);
         System.out.println("object is deleted");
     }

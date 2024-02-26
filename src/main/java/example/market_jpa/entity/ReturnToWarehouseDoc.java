@@ -24,6 +24,8 @@ public class ReturnToWarehouseDoc {
     @CreationTimestamp
     @Temporal(TemporalType.DATE)
     private Date date;
+    @Enumerated(EnumType.STRING)
+    private DocStatus status;
     @OneToMany(mappedBy = "doc",fetch = FetchType.EAGER)
     private List<ReturnToWarehouseDocItem> docItems;
 }

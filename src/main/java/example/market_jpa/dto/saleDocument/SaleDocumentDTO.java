@@ -12,6 +12,7 @@ import java.sql.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 public class SaleDocumentDTO {
+    private Long id;
     private String docNumber;
     private Date date;
 }

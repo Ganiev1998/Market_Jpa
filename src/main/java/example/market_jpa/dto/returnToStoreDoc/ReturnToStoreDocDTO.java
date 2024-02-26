@@ -12,6 +12,7 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ReturnToStoreDocDTO {
+    private Long id;
     private String docNumber;
     private Date date;
 }

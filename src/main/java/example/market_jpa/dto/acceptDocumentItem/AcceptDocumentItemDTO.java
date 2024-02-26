@@ -12,6 +12,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class AcceptDocumentItemDTO {
+    //private Long id;
     private AcceptDocumentDTO acceptDocument;
     private ProductDTO product;
     private Double comePrice;

@@ -18,5 +18,4 @@ public class AcceptDocumentItem {
     private Product product;
     private Double comePrice;
     private Long count;
-
 }

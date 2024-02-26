@@ -24,7 +24,5 @@ public class Product {
     private Measurement measure;
     private Long amount;
     @OneToMany(mappedBy = "product",fetch = FetchType.EAGER)
-    private Set<AcceptDocumentItem> documentItems;
-    @OneToMany(mappedBy = "product",fetch = FetchType.EAGER)
     private List<ProductPrice> price;
 }

@@ -28,19 +28,19 @@ public class SaleDocumentController implements Controller<SaleDocumentResDTO, Sa
 
     @Override
     @PostMapping
-    public SaleDocumentResDTO create(SaleDocumentDTO saleDocumentDTO) {
+    public SaleDocumentResDTO create(@RequestBody SaleDocumentDTO saleDocumentDTO) {
         return service.create(saleDocumentDTO);
     }
 
     @Override
     @PutMapping("/{id}")
-    public SaleDocumentResDTO update(Long id, SaleDocumentDTO saleDocumentDTO) {
+    public SaleDocumentResDTO update(@PathVariable Long id,@RequestBody SaleDocumentDTO saleDocumentDTO) {
         return service.update(id,saleDocumentDTO);
     }
 
     @Override
     @DeleteMapping("/{id}")
-    public void delete(Long id) {
+    public void delete(@PathVariable Long id) {
         service.delete(id);
         System.out.println("object is deleted");
     }

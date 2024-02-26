@@ -14,5 +14,5 @@ import java.util.List;
 public class CategoryResDTO {
     private Long id;
     private String categoryName;
-    private List<ProductWithCategoryResDTO> product;
+    private List<ProductWithCategoryResDTO> products;
 }

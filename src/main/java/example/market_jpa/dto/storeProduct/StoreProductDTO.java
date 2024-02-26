@@ -12,6 +12,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class StoreProductDTO {
+    private Long id;
     private ProductDTO product;
     private Long amount;
 }

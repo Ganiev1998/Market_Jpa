@@ -27,19 +27,19 @@ public class StoreDocumentItemController implements Controller<StoreDocItemResDT
 
     @Override
     @PostMapping
-    public StoreDocItemResDTO create(StoreDocItemDTO storeDocItemDTO) {
+    public StoreDocItemResDTO create(@RequestBody StoreDocItemDTO storeDocItemDTO) {
         return service.create(storeDocItemDTO);
     }
 
     @Override
     @PutMapping("/{id}")
-    public StoreDocItemResDTO update(Long id, StoreDocItemDTO storeDocItemDTO) {
+    public StoreDocItemResDTO update(@PathVariable Long id,@RequestBody StoreDocItemDTO storeDocItemDTO) {
         return service.update(id,storeDocItemDTO);
     }
 
     @Override
     @DeleteMapping("/{id}")
-    public void delete(Long id) {
+    public void delete(@PathVariable Long id) {
         service.delete(id);
         System.out.println("object is deleted");
     }

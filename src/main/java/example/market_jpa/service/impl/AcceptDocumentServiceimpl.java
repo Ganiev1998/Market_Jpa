@@ -3,11 +3,13 @@ package example.market_jpa.service.impl;
 import example.market_jpa.dto.acceptDocument.AcceptDocumentDTO;
 import example.market_jpa.dto.acceptDocument.AcceptDocumentResDTO;
 import example.market_jpa.entity.AcceptDocument;
+import example.market_jpa.entity.DocStatus;
 import example.market_jpa.mappers.impl.AcceptDocumentItemMapper;
 import example.market_jpa.mappers.impl.AcceptDocumentMapper;
 import example.market_jpa.mappers.impl.CompanyMapper;
 import example.market_jpa.repository.AcceptDocumentItemRepository;
 import example.market_jpa.repository.AcceptDocumentRepository;
+import example.market_jpa.repository.CompanyRepository;
 import example.market_jpa.service.AcceptDocumentService;
 import lombok.Data;
 import org.springframework.stereotype.Service;
@@ -20,6 +22,7 @@ public class AcceptDocumentServiceimpl implements AcceptDocumentService {
     private final AcceptDocumentRepository repository;
     private final AcceptDocumentMapper mapper;
     private final CompanyMapper c_mapper;
+    private final CompanyRepository c_repository;
     @Override
     public AcceptDocumentResDTO getById(Long id) {
         return mapper.toDTO(repository.getReferenceById(id));
@@ -32,7 +35,10 @@ public class AcceptDocumentServiceimpl implements AcceptDocumentService {
 
     @Override
     public AcceptDocumentResDTO create(AcceptDocumentDTO acceptDocumentDTO) {
-        return mapper.toDTO(repository.save(mapper.toENT(acceptDocumentDTO)));
+        AcceptDocument document = mapper.toENT(acceptDocumentDTO);
+        document.setCompany(c_repository.getReferenceById(acceptDocumentDTO.getCompany().getId()));
+        document.setStatus(DocStatus.DONE);
+        return mapper.toDTO(repository.save(document));
     }
 
     @Override

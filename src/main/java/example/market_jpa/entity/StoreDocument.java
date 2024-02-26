@@ -21,6 +21,8 @@ public class StoreDocument {
     @CreationTimestamp
     @Temporal(TemporalType.DATE)
     private Date date;
+    @Enumerated(EnumType.STRING)
+    private DocStatus status;
     @OneToMany(mappedBy = "storeDocument")
     private Set<StoreDocumentItem> documentItems;
 }

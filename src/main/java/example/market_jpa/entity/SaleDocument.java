@@ -22,6 +22,10 @@ public class SaleDocument {
     @CreationTimestamp
     @Temporal(TemporalType.DATE)
     private Date date;
+    @Enumerated(EnumType.STRING)
+    private PayType payType;
+    @Enumerated(EnumType.STRING)
+    private DocStatus status;
     @OneToMany(mappedBy = "saleDocument")
     private Set<SaleDocumentItem> documentItems;
 }

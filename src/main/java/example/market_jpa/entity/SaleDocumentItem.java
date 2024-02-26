@@ -21,4 +21,5 @@ public class SaleDocumentItem {
     private StoreProduct storeProduct;
     private Long count;
     private Double price;
+
 }

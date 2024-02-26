@@ -13,6 +13,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ReturnToWarehouseDocDTO {
+    private Long id;
     private String docNumber;
     private Date date;
 }

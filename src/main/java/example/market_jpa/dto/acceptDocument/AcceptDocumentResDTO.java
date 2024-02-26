@@ -4,6 +4,7 @@ import example.market_jpa.dto.acceptDocumentItem.AcceptDocumentItemResDTO;
 import example.market_jpa.dto.acceptDocumentItem.AcceptDocumentItemWithDocResDTO;
 import example.market_jpa.dto.company.CompanyResDTO;
 import example.market_jpa.entity.AcceptDocumentItem;
+import example.market_jpa.entity.DocStatus;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -21,5 +22,6 @@ public class AcceptDocumentResDTO {
     private String docNumber;
     private CompanyResDTO company;
     private Date date;
+    private DocStatus status;
     private List<AcceptDocumentItemWithDocResDTO> documentItems;
 }

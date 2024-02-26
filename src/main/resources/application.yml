@@ -8,3 +8,7 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+springdoc:
+  swagger-ui:
+    disable-swagger-default-url: true
+    path: /example/market_jpa
